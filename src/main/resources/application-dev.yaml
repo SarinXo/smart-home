@@ -1,0 +1,27 @@
+server:
+  port: 17000
+
+spring:
+  liquibase:
+    enabled: true
+    change-log: classpath:/migrations/changelog-master.xml
+
+  docker:
+    compose:
+      lifecycle-management: start_only
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/smart_home
+    username: admin
+    password: pswd
+    driver-class-name: org.postgresql.Driver
+
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiql
+      sdl-endpoint: /graphql
