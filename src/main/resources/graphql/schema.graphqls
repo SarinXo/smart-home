@@ -1,0 +1,25 @@
+type Query {
+    allDevices(homeId: Int!): [DeviceResponseDto]
+}
+
+type Mutation {
+    deleteDevice(deviceId: Int!): Boolean
+    saveDevice(device: DeviceRequestDto!): DeviceResponseDto
+    setAlias(deviceId: Int!, alias: String!): DeviceResponseDto
+}
+
+type DeviceResponseDto {
+    id: Int
+    name: String
+    alias: String
+    description: String
+    lastUsage: String
+    homeId: Int
+}
+
+input DeviceRequestDto {
+    name: String
+    alias: String
+    description: String
+    homeId: Int
+}

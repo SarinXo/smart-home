@@ -19,3 +19,9 @@ spring:
     username: admin
     password: pswd
     driver-class-name: org.postgresql.Driver
+
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiql
+      sdl-endpoint: /graphql
