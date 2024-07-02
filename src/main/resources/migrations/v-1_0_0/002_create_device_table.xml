@@ -1,0 +1,20 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="create device table" author="Ilya">
+        <createTable tableName="device" schemaName="app">
+            <column name="id" type="INTEGER">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(70)"/>
+            <column name="alias" type="VARCHAR(70)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="last_usage" type="TIMESTAMP WITH TIME ZONE"/>
+            <column name="home_id" type="INTEGER"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
