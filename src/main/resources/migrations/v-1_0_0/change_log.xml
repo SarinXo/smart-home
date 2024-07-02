@@ -5,7 +5,6 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
     <include file="000_create_schema.xml" relativeToChangelogFile="true"/>
-    <include file="001_create_home_table.xml" relativeToChangelogFile="true"/>
-    <include file="002_create_device_table.xml" relativeToChangelogFile="true"/>
+    <include file="001_create_device_table.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

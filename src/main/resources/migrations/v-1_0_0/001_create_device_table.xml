@@ -6,7 +6,7 @@
 
     <changeSet id="create device table" author="Ilya">
         <createTable tableName="device" schemaName="app">
-            <column name="id" type="INTEGER">
+            <column name="id" type="SERIAL">
                 <constraints primaryKey="true"/>
             </column>
             <column name="name" type="VARCHAR(70)"/>

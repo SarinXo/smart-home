@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: 'postgres:latest'
+    image: 'postgres:14.6-alpine'
     environment:
       - 'POSTGRES_DB=smart_home'
       - 'POSTGRES_PASSWORD=pswd'
