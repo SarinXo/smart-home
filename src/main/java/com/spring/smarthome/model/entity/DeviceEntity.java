@@ -3,10 +3,10 @@ package com.spring.smarthome.model.entity;
 import com.spring.smarthome.model.meta.AppSchemaConstants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,6 +26,7 @@ public class DeviceEntity {
     public final static String SQL_TABLE_NAME = "device";
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = Fields.ID)
     private Integer id;
     @Column(name = Fields.NAME)
@@ -36,9 +37,8 @@ public class DeviceEntity {
     private String description;
     @Column(name = Fields.LAST_USAGE)
     private OffsetDateTime lastUsage;
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = Fields.HOME_ID)
-    private HomeEntity home;
+    private Integer homeId;
 
     public static class Fields {
         public static final String ID = "id";
